@@ -5,14 +5,14 @@ let
   inherit (nixpkgs) pkgs;
 
   f = { mkDerivation, base, bytestring, http-types, stdenv, text
-      , wai, web-routes
+      , wai, web-routes, cabal-install
       }:
       mkDerivation {
         pname = "web-routes-wai";
         version = "0.24.2";
         src = ./.;
         libraryHaskellDepends = [
-          base bytestring http-types text wai web-routes
+          base bytestring http-types text wai web-routes cabal-install
         ];
         description = "Library for maintaining correctness of URLs within an application";
         license = stdenv.lib.licenses.bsd3;
